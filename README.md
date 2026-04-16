@@ -1,0 +1,122 @@
+# 🚀 GitOps DevOps Dashboard
+
+A complete **End-to-End DevOps Project** using **GitOps (Argo CD)**, **Kubernetes**, **Docker**, and **Jenkins CI/CD**.
+
+---
+
+## 📌 Project Overview
+
+This project demonstrates how to build and deploy a **cloud-native application** using modern DevOps tools:
+
+* ⚙️ CI/CD using Jenkins
+* 🐳 Containerization using Docker
+* ☸️ Kubernetes for orchestration
+* 🔄 GitOps using Argo CD
+* 📊 Monitoring with Prometheus & Grafana
+
+---
+
+## 🏗️ Architecture
+
+```
+Developer → GitHub → Jenkins → DockerHub → Kubernetes → ArgoCD → Deployment
+```
+
+---
+
+## 📁 Project Structure
+
+```
+gitops-devops-dashboard/
+│
+├── argocd/
+├── apps/
+├── k8s/
+├── frontend/
+├── backend/
+├── ci-cd/
+```
+
+---
+
+## ⚙️ Tech Stack
+
+* Frontend: React
+* Backend: Node.js (Express)
+* Database: MongoDB
+* CI/CD: Jenkins
+* Container: Docker
+* Orchestration: Kubernetes
+* GitOps: Argo CD
+* Monitoring: Prometheus & Grafana
+
+---
+
+## 🚀 Features
+
+* 🔄 Automated CI/CD Pipeline
+* 📦 Docker Image Build & Push
+* ☸️ Kubernetes Deployment
+* 🔁 GitOps Continuous Deployment (Argo CD)
+* 📊 Monitoring Dashboard
+
+---
+
+## 🧪 Run Locally
+
+### 1️⃣ Start Kubernetes
+
+```
+minikube start
+```
+
+### 2️⃣ Apply Kubernetes Files
+
+```
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/
+```
+
+### 3️⃣ Access Application
+
+```
+minikube service frontend -n devops
+```
+
+---
+
+## 🔁 Jenkins Pipeline
+
+* Checkout code
+* Build Docker images
+* Push to DockerHub
+* ArgoCD auto deploy
+
+---
+
+## 📊 Monitoring
+
+* Prometheus → Metrics collection
+* Grafana → Dashboard visualization
+
+---
+
+## 🎯 Learning Outcomes
+
+* GitOps workflow implementation
+* CI/CD pipeline automation
+* Kubernetes deployments
+* Real-world DevOps practices
+
+---
+
+## 🙌 Author
+
+**Ankit Rana**
+
+---
+
+## ⭐ Give a Star
+
+If you like this project, give it a ⭐ on GitHub!
+
