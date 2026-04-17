@@ -86,25 +86,27 @@ cd gitops-devops-dashboard
 ## 🐳 2. BUILD & PUSH DOCKER IMAGES
 
 👉 Replace YOUR_DOCKER with your DockerHub username
-
+```
 🔹 Login
 docker login
+
 🔹 Build images
 docker build -t YOUR_DOCKER/backend ./backend
 docker build -t YOUR_DOCKER/frontend ./frontend
+
 🔹 Push images
 docker push YOUR_DOCKER/backend
 docker push YOUR_DOCKER/frontend
-
+```
 ⚠️ IMPORTANT
 
 👉 Update images in:
-
+```
 k8s/backend/deployment.yaml
 k8s/frontend/deployment.yaml
 image: YOUR_DOCKER/backend:latest
 image: YOUR_DOCKER/frontend:latest
-
+```
 ## ☸️ 3. START KUBERNETES
 minikube start
 
@@ -112,8 +114,10 @@ minikube start
 kubectl apply -f k8s/namespace.yaml
 
 ## 📦 5. INSTALL ARGO CD
+```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
 
 ## 🔐 6. ACCESS ARGO CD UI
 kubectl port-forward svc/argocd-server -n argocd 8080:443
@@ -133,12 +137,13 @@ kubectl apply -f argocd/parent-app.yaml
 🧠 WHAT HAPPENS NOW
 
 Argo CD will automatically deploy:
-
+```
 apps/
  ├── frontend
  ├── backend
  ├── database
  └── monitoring
+```
 
 ## 🧪 8. VERIFY DEPLOYMENT
 kubectl get pods -n devops
