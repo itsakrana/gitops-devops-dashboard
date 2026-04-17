@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: parent-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/itsakrana/gitops-devops-dashboard
+    targetRevision: HEAD
+    path: apps   # 👈 this folder contains frontend, backend, database, monitoring apps
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devops
+
+  syncPolicy:
+    automated:
+      prune: true        # removes unused resources
+      selfHeal: true     # fixes drift automatically
+
+    syncOptions:
+      - CreateNamespace=true
